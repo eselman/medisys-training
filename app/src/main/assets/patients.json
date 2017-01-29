@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "firstName":"Juan",
+    "lastName":"Perez",
+    "phoneNumber":"4454544",
+    "mobilePhone":"261718900",
+    "identificationNumber":"32989989",
+    "birthDate":"1982-12-25",
+    "address": {
+      "id": 1,
+      "street": "Av. San Martin",
+      "number": "972",
+      "floor": "2",
+      "apartment": "N/A",
+      "town": {
+        "id": 1,
+        "code":"CAP",
+        "name":"Capital",
+        "department": {
+          "id": 1,
+          "code":"CDAD",
+          "name":"Ciudad",
+          "county":{
+            "id": 1,
+            "code":"MZA",
+            "name":"Mendoza",
+            "country": {
+              "id":1,
+              "code":"AR",
+              "name":"Argentina"
+            }
+          },
+          "country": {
+            "id":1,
+            "code":"AR",
+            "name":"Argentina"
+          }
+        },
+        "county":{
+          "id": 1,
+          "code":"MZA",
+          "name":"Mendoza",
+          "country": {
+            "id":1,
+            "code":"AR",
+            "name":"Argentina"
+          }
+        },
+        "country": {
+          "id":1,
+          "code":"AR",
+          "name":"Argentina"
+        }
+      }
+    },
+    "insurances": [
+      {
+        "id":1,
+        "symbol":"OSDE",
+        "description": "OSDE 210",
+        "affiliateNumber":"999999999999"
+      }
+    ]
+  }
+]

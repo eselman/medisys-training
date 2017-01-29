@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="menu_options_icons">
+        <item>@drawable/patients</item>
+        <item>@drawable/medicines</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Medisys</string>
+    <string name="username_placeholder">Usuario</string>
+    <string name="password_placeholder">Contraseña</string>
+    <string name="login_button_text">Ingresar</string>
+    <string name="drawer_open">Menu Lateral Abierto</string>
+    <string name="drawer_close">Menu Lateral Cerrado</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
