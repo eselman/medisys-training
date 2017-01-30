@@ -1,5 +1,7 @@
 package com.eselman.medisys;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,18 +12,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
 
 import com.eselman.medisys.adapters.DrawerMenuAdapter;
 import com.eselman.medisys.helpers.RecyclerTouchListener;
 
 public class PatientsLandingActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    RecyclerView drawerRecyclerView;
-    RecyclerView.Adapter drawerMenuAdapter;
-    RecyclerView.LayoutManager layoutManager;
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle drawerToggle;
+    private RecyclerView drawerRecyclerView;
+    private RecyclerView.Adapter drawerMenuAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private int lastSelectedPosition = 0;
+    private View lastSelectedView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +61,25 @@ public class PatientsLandingActivity extends AppCompatActivity {
                 drawerRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(PatientsLandingActivity.this, "Position clicked: " + position, Toast.LENGTH_LONG).show();
+                switch (position) {
+                    //Patients Menu Option.
+                    case 1: {
+                        Fragment patientsLandingFragment = new PatientsLandingFragment();
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.content_patiens, patientsLandingFragment).commit();
+
+                        // update selected item and title, then close the drawer
+                        updateSelectedItem(view, position);
+                        updateActionBarTitle(position);
+                        drawerLayout.closeDrawer(drawerRecyclerView);
+                    } case 2: {
+                        updateSelectedItem(view, position);
+                        updateActionBarTitle(position);
+                    }
+                    default:{
+                        break;
+                    }
+                }
             }
 
             @Override
@@ -89,5 +113,34 @@ public class PatientsLandingActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Updates the Action Bar Title with the selected menu option.
+     *
+     * @param position
+     */
+    private void updateActionBarTitle (int position) {
+        getSupportActionBar().setTitle(getResources().getStringArray(R.array.menu_options)[position - 1]);
+    }
+
+    /**
+     * Updates the layout for the selected menu option.
+     *
+     * @param view
+     * @param position
+     */
+    private void updateSelectedItem (View view, int position) {
+        if (position != lastSelectedPosition) {
+            view.setSelected(true);
+
+            if (lastSelectedView != null) {
+                lastSelectedView.setSelected(false);
+            }
+
+            lastSelectedView = view;
+            lastSelectedPosition = position;
+        }
+
     }
 }
