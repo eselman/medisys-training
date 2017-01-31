@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         } catch (IOException e) {
-
+            e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
