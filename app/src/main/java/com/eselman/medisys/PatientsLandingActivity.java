@@ -101,6 +101,13 @@ public class PatientsLandingActivity extends AppCompatActivity {
             }
         };
         drawerLayout.addDrawerListener(drawerToggle);
+
+        // Load Patients List as first screen.
+        Fragment patientsLandingFragment = new PatientsLandingFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_patiens, patientsLandingFragment).commit();
+        updateActionBarTitle(1);
+
         drawerToggle.syncState();
     }
 

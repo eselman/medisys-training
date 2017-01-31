@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.eselman.medisys.entities.User;
+import com.eselman.medisys.helpers.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,8 +25,6 @@ import java.util.List;
  * Created by Evangelina Selman on 26/01/2017.
  */
 public class LoginActivity extends AppCompatActivity {
-
-    private static final String USERS_ASSET_FILE = "users.json";
 
     private EditText usernameInput;
     private EditText passwordInput;
@@ -70,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void getAuthorizedUsers(){
         try {
-            InputStream usersAssetIS = getApplicationContext().getAssets().open(USERS_ASSET_FILE);
+            InputStream usersAssetIS = getApplicationContext().getAssets().open(Constants.USERS_ASSET_FILE);
             int size = usersAssetIS.available();
             byte[] buffer = new byte[size];
             usersAssetIS.read(buffer);

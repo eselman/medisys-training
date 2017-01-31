@@ -1,5 +1,6 @@
 package com.eselman.medisys.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,10 +8,11 @@ import java.util.Set;
 /**
  * Created by Evangelina Selman on 29/01/2017.
  */
-public class Patient {
+public class Patient implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+    private Integer age;
     private String phoneNumber;
     private String mobilePhone;
     private String identificationNumber;
@@ -24,6 +26,14 @@ public class Patient {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getFirstName() {
