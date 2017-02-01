@@ -1,13 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_edit_patient_details"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.eselman.medisys.EditPatientDetailsActivity">
+    tools:context="com.eselman.medisys.PatientDetailActivity">
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar">
+    </include>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tool_bar"
+        android:paddingTop="@dimen/activity_vertical_margin">
+        <!-- Linearlayout idNumber and Age -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/patientIdLabelEdit"
+                android:text="@string/patient_id_label">
+            </TextView>
+
+            <EditText
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientIdNumberEdit"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                tools:text="29561830">
+            </EditText>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/ageLabelEdit"
+                android:text="@string/age_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientAgeEdit"
+                tools:text="34">
+            </TextView>
+        </LinearLayout>
+
+        <!-- Linearlayout Birth Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/birthDateLabelEdit"
+                android:text="@string/birth_date_label">
+            </TextView>
+
+            <EditText
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientBirthDateEdit"
+                tools:text="23/12/1982"
+                android:inputType="date">
+            </EditText>
+        </LinearLayout>
+
+        <!-- Linearlayout Address -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/addressLabelEdit"
+                android:text="@string/address_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientAddress"
+                tools:text="Miguez 506 San Martin Mendoza">
+            </TextView>
+        </LinearLayout>
+
+        <!-- Linearlayout Phone and Mobile Phone -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/phoneLabel"
+                android:text="@string/phone_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientPhone"
+                tools:text="442125">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/mobilePhoneLabel"
+                android:text="@string/mobile_phone_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientMobilePhone"
+                tools:text="2634442125">
+            </TextView>
+        </LinearLayout>
+
+        <!-- Linearlayout Insurance -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/insuranceLabel"
+                android:text="@string/insurance_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientInsurance"
+                tools:text="OSDE">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/label_separator_padding"
+                android:id="@+id/insuranceNumberLabel"
+                android:text="@string/insurance_number_label">
+            </TextView>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/patientInsuranceNumber"
+                tools:text="080000000000000000">
+            </TextView>
+        </LinearLayout>
+        <Button
+            android:id="@+id/savePatientBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_patient_btn_text"
+            android:theme="@style/AppTheme.Button">
+        </Button>
+    </LinearLayout>
 </RelativeLayout>

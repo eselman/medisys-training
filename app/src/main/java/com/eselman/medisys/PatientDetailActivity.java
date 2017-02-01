@@ -34,6 +34,7 @@ public class PatientDetailActivity extends AppCompatActivity {
     private TextView patientBirthDateInput;
     private Button patientHistoryBtn;
     private FloatingActionButton editPatientFloatingBtn;
+    private Patient patient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class PatientDetailActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-        Patient patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
+        patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
         String patientName = patient.getLastName() + ", " + patient.getFirstName();
         getSupportActionBar().setTitle(patientName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -72,6 +73,9 @@ public class PatientDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent editPatientIntent = new Intent(PatientDetailActivity.this, EditPatientDetailsActivity.class);
+                Bundle patientBundle = new Bundle();
+                patientBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
+                editPatientIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
                 startActivity(editPatientIntent);
             }
         });
