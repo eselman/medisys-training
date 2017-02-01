@@ -1,10 +1,12 @@
 package com.eselman.medisys.entities;
 
+import java.io.Serializable;
+
 /**
  * Created by Evangelina Selman on 28/01/2017.
  */
 
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
 

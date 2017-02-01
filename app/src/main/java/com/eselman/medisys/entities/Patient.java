@@ -18,7 +18,7 @@ public class Patient implements Serializable {
     private String identificationNumber;
     private Date birthDate;
     private Address address;
-    private Set<MedicalInsurance> insurances = new HashSet<>();
+    private MedicalInsurance insurance;
 
     public Long getId() {
         return id;
@@ -92,11 +92,53 @@ public class Patient implements Serializable {
         this.address = address;
     }
 
-    public Set<MedicalInsurance> getInsurances() {
-        return insurances;
+    public MedicalInsurance getInsurance() {
+        return insurance;
     }
 
-    public void setInsurances(Set<MedicalInsurance> insurances) {
-        this.insurances = insurances;
+    public void setInsurance(MedicalInsurance insurance) {
+        this.insurance = insurance;
+    }
+
+    public String getCompleteAddress(){
+        StringBuilder addressBuilder = new StringBuilder("");
+
+        if (this.getAddress() != null) {
+            if(this.getAddress().getStreet() != null && !this.getAddress().getStreet().isEmpty()){
+                addressBuilder.append(this.getAddress().getStreet());
+            }
+
+            if(this.getAddress().getNumber() != null && !this.getAddress().getNumber().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getNumber());
+            }
+
+            if(this.getAddress().getFloor() != null && !this.getAddress().getFloor().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getFloor());
+            }
+
+            if(this.getAddress().getApartment() != null && !this.getAddress().getApartment().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getApartment());
+            }
+
+            if(this.getAddress().getTown() != null && !this.getAddress().getTown().getName().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getTown().getName());
+            }
+
+            if(this.getAddress().getDepartment() != null && !this.getAddress().getDepartment().getName().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getDepartment().getName());
+            }
+
+            if(this.getAddress().getCounty() != null && !this.getAddress().getCounty().getName().isEmpty()){
+                addressBuilder.append(" ");
+                addressBuilder.append(this.getAddress().getCounty().getName());
+            }
+        }
+
+        return addressBuilder.toString();
     }
 }

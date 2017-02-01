@@ -1,10 +1,12 @@
 package com.eselman.medisys.entities;
 
+import java.io.Serializable;
+
 /**
  * Created by Evangelina Selman on 29/01/2017.
  */
 
-public class County {
+public class County implements Serializable{
     private Long id;
     private String code;
     private String name;

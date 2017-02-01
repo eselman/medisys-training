@@ -12,7 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.eselman.medisys.adapters.PatientsLandingAdapter;
+import com.eselman.medisys.entities.Address;
+import com.eselman.medisys.entities.County;
+import com.eselman.medisys.entities.Department;
+import com.eselman.medisys.entities.MedicalInsurance;
 import com.eselman.medisys.entities.Patient;
+import com.eselman.medisys.entities.Town;
 import com.eselman.medisys.entities.User;
 import com.eselman.medisys.helpers.Constants;
 import com.eselman.medisys.helpers.DividerItemDecoration;
@@ -24,7 +29,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PatientsLandingFragment extends Fragment {
@@ -32,6 +39,8 @@ public class PatientsLandingFragment extends Fragment {
     private RecyclerView.Adapter patientsLandingAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Patient> patients;
+
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Nullable
     @Override
@@ -91,10 +100,12 @@ public class PatientsLandingFragment extends Fragment {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private Patient parsePatientJsonObject (JSONObject patientJsonObject) throws JSONException {
+    private Patient parsePatientJsonObject (JSONObject patientJsonObject) throws Exception {
         Patient patient = new Patient();
 
         patient.setFirstName(patientJsonObject.getString("firstName"));
@@ -103,7 +114,46 @@ public class PatientsLandingFragment extends Fragment {
         patient.setMobilePhone(patientJsonObject.getString("mobilePhone"));
         patient.setIdentificationNumber(patientJsonObject.getString("identificationNumber"));
         patient.setAge(patientJsonObject.getInt("age"));
-        //patient.setBirthDate(patientJsonObject.get);
+        String birthDateStr = patientJsonObject.getString("birthDate");
+        Date birthDate = simpleDateFormat.parse(birthDateStr);
+        patient.setBirthDate(birthDate);
+        patient.setPhoneNumber(patientJsonObject.getString("phoneNumber"));
+        patient.setMobilePhone(patientJsonObject.getString("mobilePhone"));
+
+        // Parse Address.
+        JSONObject patientAddressJsonObj = patientJsonObject.getJSONObject("address");
+        Address patientAddress = new Address();
+        patientAddress.setStreet(patientAddressJsonObj.getString("street"));
+        patientAddress.setNumber(patientAddressJsonObj.getString("number"));
+        patientAddress.setFloor(patientAddressJsonObj.getString("floor"));
+        patientAddress.setApartment(patientAddressJsonObj.getString("apartment"));
+
+        JSONObject townJsonObject = patientAddressJsonObj.getJSONObject("town");
+        Town patientTown = new Town();
+        patientTown.setCode(townJsonObject.getString("code"));
+        patientTown.setName(townJsonObject.getString("name"));
+        patientAddress.setTown(patientTown);
+
+        JSONObject departmentJsonObject = patientAddressJsonObj.getJSONObject("department");
+        Department patientDepartment = new Department();
+        patientDepartment.setCode(departmentJsonObject.getString("code"));
+        patientDepartment.setName(departmentJsonObject.getString("name"));
+        patientAddress.setDepartment(patientDepartment);
+
+        JSONObject countyJsonObject = patientAddressJsonObj.getJSONObject("county");
+        County patientCounty = new County();
+        patientCounty.setCode(countyJsonObject.getString("code"));
+        patientCounty.setName(countyJsonObject.getString("name"));
+        patientAddress.setCounty(patientCounty);
+        patient.setAddress(patientAddress);
+
+        // Parse Insurance
+        JSONObject patientInsuranceJsonObj = patientJsonObject.getJSONObject("insurance");
+        MedicalInsurance patientInsurance = new MedicalInsurance();
+        patientInsurance.setSymbol(patientInsuranceJsonObj.getString("symbol"));
+        patientInsurance.setDescription(patientInsuranceJsonObj.getString("description"));
+        patientInsurance.setAffiliateNumber(patientInsuranceJsonObj.getString("affiliateNumber"));
+        patient.setInsurance(patientInsurance);
 
         return patient;
     }

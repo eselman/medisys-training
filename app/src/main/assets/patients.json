@@ -31,13 +31,13 @@
               "code":"AR",
               "name":"Argentina"
             }
-          },
-          "country": {
-            "id":1,
-            "code":"AR",
-            "name":"Argentina"
           }
-        },
+        }
+      },
+      "department": {
+        "id": 1,
+        "code":"CDAD",
+        "name":"Ciudad",
         "county":{
           "id": 1,
           "code":"MZA",
@@ -47,22 +47,30 @@
             "code":"AR",
             "name":"Argentina"
           }
-        },
+        }
+      },
+      "county":{
+        "id": 1,
+        "code":"MZA",
+        "name":"Mendoza",
         "country": {
           "id":1,
           "code":"AR",
           "name":"Argentina"
         }
+      },
+      "country": {
+        "id":1,
+        "code":"AR",
+        "name":"Argentina"
       }
     },
-    "insurances": [
-      {
-        "id":1,
-        "symbol":"OSDE",
-        "description": "OSDE 210",
-        "affiliateNumber":"999999999999"
-      }
-    ]
+    "insurance": {
+      "id":1,
+      "symbol":"OSDE",
+      "description": "OSDE 210",
+      "affiliateNumber":"999999999999"
+    }
   },
   {
     "id": 2,
@@ -96,13 +104,13 @@
               "code":"AR",
               "name":"Argentina"
             }
-          },
-          "country": {
-            "id":1,
-            "code":"AR",
-            "name":"Argentina"
           }
-        },
+        }
+      },
+      "department": {
+        "id": 1,
+        "code":"CDAD",
+        "name":"Ciudad",
         "county":{
           "id": 1,
           "code":"MZA",
@@ -112,21 +120,29 @@
             "code":"AR",
             "name":"Argentina"
           }
-        },
+        }
+      },
+      "county":{
+        "id": 1,
+        "code":"MZA",
+        "name":"Mendoza",
         "country": {
           "id":1,
           "code":"AR",
           "name":"Argentina"
         }
+      },
+      "country": {
+        "id":1,
+        "code":"AR",
+        "name":"Argentina"
       }
     },
-    "insurances": [
-      {
+    "insurance": {
         "id":1,
         "symbol":"OSDE",
         "description": "OSDE 210",
-        "affiliateNumber":"9999998888888"
+        "affiliateNumber":"999999888888"
       }
-    ]
   }
 ]
