@@ -1,11 +1,16 @@
 package com.eselman.medisys;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.helpers.Constants;
@@ -27,6 +32,8 @@ public class PatientDetailActivity extends AppCompatActivity {
     private TextView patientInsuranceInput;
     private TextView patientInsuranceNumberInput;
     private TextView patientBirthDateInput;
+    private Button patientHistoryBtn;
+    private FloatingActionButton editPatientFloatingBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,24 @@ public class PatientDetailActivity extends AppCompatActivity {
         patientInsuranceInput = (TextView) findViewById(R.id.patientInsurance);
         patientInsuranceNumberInput = (TextView) findViewById(R.id.patientInsuranceNumber);
         patientBirthDateInput = (TextView) findViewById(R.id.patientBirthDate);
+
+        patientHistoryBtn = (Button) findViewById(R.id.patientHistoryBtn);
+        patientHistoryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent patientHistoryIntent = new Intent(PatientDetailActivity.this, PatientHistoryActivity.class);
+                startActivity(patientHistoryIntent);
+            }
+        });
+
+        editPatientFloatingBtn = (FloatingActionButton) findViewById(R.id.editPatientFloatingBtn);
+        editPatientFloatingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent editPatientIntent = new Intent(PatientDetailActivity.this, EditPatientDetailsActivity.class);
+                startActivity(editPatientIntent);
+            }
+        });
 
         updatePatientDetails(patient);
     }

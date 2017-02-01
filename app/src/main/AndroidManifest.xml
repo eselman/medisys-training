@@ -16,8 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".PatientsLandingActivity" />
-        <activity android:name=".PatientDetailActivity"
-            android:parentActivityName=".PatientsLandingActivity">
-        </activity>
+        <activity
+            android:name=".PatientDetailActivity"
+            android:parentActivityName=".PatientsLandingActivity" />
+        <activity android:name=".PatientHistoryActivity" />
+        <activity android:name=".EditPatientDetailsActivity"></activity>
     </application>
+
 </manifest>
