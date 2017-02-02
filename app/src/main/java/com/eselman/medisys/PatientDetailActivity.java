@@ -66,6 +66,9 @@ public class PatientDetailActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent patientHistoryIntent = new Intent(PatientDetailActivity.this, PatientHistoryActivity.class);
+                    Bundle patientHistoryBundle = new Bundle();
+                    patientHistoryBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
+                    patientHistoryIntent.putExtra(Constants.PATIENT_EXTRA, patientHistoryBundle);
                     startActivity(patientHistoryIntent);
                 }
             });

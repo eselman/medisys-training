@@ -11,12 +11,12 @@
     </include>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/tool_bar">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_below="@id/tool_bar"
             android:paddingTop="@dimen/activity_vertical_margin">
             <!-- Linear Layout for First Name and Last Name -->
             <LinearLayout
@@ -56,7 +56,7 @@
                 </EditText>
             </LinearLayout>
 
-            <!-- Linearlayout for idNumber and Age -->
+            <!-- Linearlayout for idNumber -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -147,6 +147,12 @@
                     android:id="@+id/patientStreetNumber"
                     tools:text="506">
                 </EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/activity_vertical_margin">
                 <TextView
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
@@ -163,62 +169,21 @@
                     tools:text="">
                 </EditText>
 
-            </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/activity_vertical_margin">
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/label_separator_padding"
-                android:id="@+id/apartmentLabel"
-                android:text="@string/apartment_label"
-                android:gravity="center_vertical">
-            </TextView>
-            <EditText
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:id="@+id/patientApartment"
-                tools:text="">
-            </EditText>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/label_separator_padding"
-                android:id="@+id/townLabel"
-                android:text="@string/town_label"
-                android:gravity="center_vertical">
-            </TextView>
-            <Spinner
-                android:id="@+id/patientTown"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-            </Spinner>
-        </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/activity_vertical_margin">
                 <TextView
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/label_separator_padding"
-                    android:id="@+id/departLabel"
-                    android:text="@string/department_label"
+                    android:id="@+id/apartmentLabel"
+                    android:text="@string/apartment_label"
                     android:gravity="center_vertical">
                 </TextView>
-                <Spinner
-                    android:id="@+id/patientDepartment"
+                <EditText
+                    android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                </Spinner>
+                    android:id="@+id/patientApartment"
+                    tools:text="">
+                </EditText>
             </LinearLayout>
 
             <!-- Linearlayout for Phone and Mobile Phone -->
@@ -275,7 +240,7 @@
                     android:paddingRight="@dimen/label_separator_padding"
                     android:id="@+id/insuranceLabelEditable"
                     android:text="@string/insurance_label"
-                    android:layout_gravity="center_vertical">
+                    android:gravity="center_vertical">
                 </TextView>
 
                 <EditText
@@ -292,14 +257,14 @@
                     android:paddingRight="@dimen/label_separator_padding"
                     android:id="@+id/insuranceNumberLabelEditable"
                     android:text="@string/insurance_number_label"
-                    android:layout_gravity="center_vertical">
+                    android:gravity="center_vertical">
                 </TextView>
 
                 <EditText
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:id="@+id/patientInsuranceNumberEditable"
-                    tools:text="08000000000">
+                    tools:text="0800000">
                 </EditText>
             </LinearLayout>
 

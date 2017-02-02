@@ -122,21 +122,6 @@ public class Patient implements Serializable {
                 addressBuilder.append(" ");
                 addressBuilder.append(this.getAddress().getApartment());
             }
-
-            if(this.getAddress().getTown() != null && !this.getAddress().getTown().getName().isEmpty()){
-                addressBuilder.append(" ");
-                addressBuilder.append(this.getAddress().getTown().getName());
-            }
-
-            if(this.getAddress().getDepartment() != null && !this.getAddress().getDepartment().getName().isEmpty()){
-                addressBuilder.append(" ");
-                addressBuilder.append(this.getAddress().getDepartment().getName());
-            }
-
-            if(this.getAddress().getCounty() != null && !this.getAddress().getCounty().getName().isEmpty()){
-                addressBuilder.append(" ");
-                addressBuilder.append(this.getAddress().getCounty().getName());
-            }
         }
 
         return addressBuilder.toString();

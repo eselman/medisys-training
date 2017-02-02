@@ -43,8 +43,6 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
     private EditText patientMobilePhoneInput;
     private EditText patientInsuranceInput;
     private EditText patientInsuranceNumberInput;
-    private Spinner patientTownSelector;
-    private Spinner patientDepartmentSelector;
     private Button savePatientBtn;
 
     @Override
@@ -61,8 +59,6 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initializeViews();
-        populateTowns();
-        populateDepartments();
         loadPatientInfo();
         patientBirthDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,27 +122,11 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
         patientStreetNumberInput = (EditText) findViewById(R.id.patientStreetNumber);
         patientFloorInput = (EditText) findViewById(R.id.patientFloor);
         patientApartmentInput = (EditText) findViewById(R.id.patientApartment);
-        patientTownSelector = (Spinner) findViewById(R.id.patientTown);
-        patientDepartmentSelector = (Spinner) findViewById(R.id.patientDepartment);
         patientPhoneNumberInput = (EditText) findViewById(R.id.patientPhoneEditable);
         patientMobilePhoneInput = (EditText) findViewById(R.id.patientMobilePhoneEditable);
         patientInsuranceInput = (EditText) findViewById(R.id.patientInsuranceEditable);
         patientInsuranceNumberInput = (EditText) findViewById(R.id.patientInsuranceNumberEditable);
         savePatientBtn = (Button) findViewById(R.id.savePatientBtn);
-    }
-
-        private void populateTowns(){
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                    R.array.towns, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            patientTownSelector.setAdapter(adapter);
-        }
-
-    private void populateDepartments(){
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.departments, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        patientDepartmentSelector.setAdapter(adapter);
     }
 
     private void loadPatientInfo(){
@@ -159,38 +139,10 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
         patientStreetNumberInput.setText(patient.getAddress().getNumber());
         patientFloorInput.setText(patient.getAddress().getFloor());
         patientApartmentInput.setText(patient.getAddress().getApartment());
-        patientTownSelector.setSelection(getPatientTownPosition(patient.getAddress().getTown().getName()));
-        patientDepartmentSelector.setSelection(getPatientDepartmentPosition(patient.getAddress().getDepartment().getName()));
         patientPhoneNumberInput.setText(patient.getPhoneNumber());
         patientMobilePhoneInput.setText(patient.getMobilePhone());
         patientInsuranceInput.setText(patient.getInsurance().getDescription());
         patientInsuranceNumberInput.setText(patient.getInsurance().getAffiliateNumber());
-    }
-
-    private int getPatientTownPosition(String townName){
-        int townPosition = 0;
-        String[] towns = getResources().getStringArray(R.array.towns);
-        for (int i=0; i < towns.length; i++) {
-            if(towns[i].equalsIgnoreCase(townName)){
-                townPosition = i;
-                break;
-            }
-        }
-
-        return townPosition;
-    }
-
-    private int getPatientDepartmentPosition(String departmentName){
-        int departmentPosition = 0;
-        String[] departments = getResources().getStringArray(R.array.departments);
-        for (int i=0; i < departments.length; i++) {
-            if(departments[i].equalsIgnoreCase(departmentName)){
-                departmentPosition = i;
-                break;
-            }
-        }
-
-        return departmentPosition;
     }
 
     private void updatePatientInfo() throws Exception{
