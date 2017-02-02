@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="towns">
+        <item>"1ra Seccion"</item>
+        <item>"2da Seccion"</item>
+        <item>"3ra Seccion"</item>
+        <item>"4ta Seccion"</item>
+        <item>"5ta Seccion"</item>
+        <item>"Capital"</item>
+    </string-array>
+</resources>

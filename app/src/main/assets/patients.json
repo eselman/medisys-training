@@ -69,7 +69,7 @@
       "id":1,
       "symbol":"OSDE",
       "description": "OSDE 210",
-      "affiliateNumber":"999999999999"
+      "affiliateNumber":"999999999"
     }
   },
   {
@@ -142,7 +142,7 @@
         "id":1,
         "symbol":"OSDE",
         "description": "OSDE 210",
-        "affiliateNumber":"999999888888"
+        "affiliateNumber":"999999888"
       }
   }
 ]

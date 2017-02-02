@@ -46,41 +46,44 @@ public class PatientDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
-        String patientName = patient.getLastName() + ", " + patient.getFirstName();
-        getSupportActionBar().setTitle(patientName);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        patientIdNumberInput = (TextView)findViewById(R.id.patientIdNumber);
-        patientAgeInput = (TextView)findViewById(R.id.patientAge);
-        patientPhoneNumberInput = (TextView) findViewById(R.id.patientPhone);
-        patientMobilePhoneInput = (TextView) findViewById(R.id.patientMobilePhone);
-        patientAddressInput = (TextView) findViewById(R.id.patientAddress);
-        patientInsuranceInput = (TextView) findViewById(R.id.patientInsurance);
-        patientInsuranceNumberInput = (TextView) findViewById(R.id.patientInsuranceNumber);
-        patientBirthDateInput = (TextView) findViewById(R.id.patientBirthDate);
+        if (patient != null) {
+            String patientName = patient.getLastName() + ", " + patient.getFirstName();
+            getSupportActionBar().setTitle(patientName);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        patientHistoryBtn = (Button) findViewById(R.id.patientHistoryBtn);
-        patientHistoryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent patientHistoryIntent = new Intent(PatientDetailActivity.this, PatientHistoryActivity.class);
-                startActivity(patientHistoryIntent);
-            }
-        });
+            patientIdNumberInput = (TextView) findViewById(R.id.patientIdNumber);
+            patientAgeInput = (TextView) findViewById(R.id.patientAge);
+            patientPhoneNumberInput = (TextView) findViewById(R.id.patientPhone);
+            patientMobilePhoneInput = (TextView) findViewById(R.id.patientMobilePhone);
+            patientAddressInput = (TextView) findViewById(R.id.patientAddress);
+            patientInsuranceInput = (TextView) findViewById(R.id.patientInsurance);
+            patientInsuranceNumberInput = (TextView) findViewById(R.id.patientInsuranceNumber);
+            patientBirthDateInput = (TextView) findViewById(R.id.patientBirthDate);
 
-        editPatientFloatingBtn = (FloatingActionButton) findViewById(R.id.editPatientFloatingBtn);
-        editPatientFloatingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent editPatientIntent = new Intent(PatientDetailActivity.this, EditPatientDetailsActivity.class);
-                Bundle patientBundle = new Bundle();
-                patientBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
-                editPatientIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
-                startActivity(editPatientIntent);
-            }
-        });
+            patientHistoryBtn = (Button) findViewById(R.id.patientHistoryBtn);
+            patientHistoryBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent patientHistoryIntent = new Intent(PatientDetailActivity.this, PatientHistoryActivity.class);
+                    startActivity(patientHistoryIntent);
+                }
+            });
 
-        updatePatientDetails(patient);
+            editPatientFloatingBtn = (FloatingActionButton) findViewById(R.id.editPatientFloatingBtn);
+            editPatientFloatingBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent editPatientIntent = new Intent(PatientDetailActivity.this, EditPatientDetailsActivity.class);
+                    Bundle patientBundle = new Bundle();
+                    patientBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
+                    editPatientIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
+                    startActivity(editPatientIntent);
+                }
+            });
+
+            updatePatientDetails(patient);
+        }
     }
 
     private void updatePatientDetails(Patient patient) {
