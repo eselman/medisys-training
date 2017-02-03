@@ -48,16 +48,13 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.Vi
 
     @Override
     public DrawerMenuAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = null;
         if (viewType == TYPE_ITEM) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.drawer_list_item, parent, false);
-            ViewHolder vhItem = new ViewHolder(v, viewType);
-            return vhItem;
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.drawer_list_item, parent, false);
         } else if (viewType == TYPE_HEADER) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.header, parent, false);
-            ViewHolder vhHeader = new ViewHolder(v, viewType);
-            return vhHeader;
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.header, parent, false);
         }
-        return null;
+        return new ViewHolder(view, viewType);
     }
 
     @Override

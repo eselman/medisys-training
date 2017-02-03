@@ -1,11 +1,9 @@
 package com.eselman.medisys.adapters;
 
-import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eselman.medisys.R;
@@ -36,9 +34,8 @@ public class PatientsLandingAdapter extends RecyclerView.Adapter<PatientsLanding
 
     @Override
     public PatientsLandingAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.patiens_list_item, parent, false);
-        ViewHolder vhItem = new ViewHolder(v);
-        return vhItem;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.patiens_list_item, parent, false);
+        return  new ViewHolder(view);
       }
 
     @Override

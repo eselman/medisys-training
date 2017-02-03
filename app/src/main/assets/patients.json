@@ -13,57 +13,7 @@
       "street": "Av. San Martin",
       "number": "972",
       "floor": "2",
-      "apartment": "N/A",
-      "town": {
-        "id": 1,
-        "code":"CAP",
-        "name":"Capital",
-        "department": {
-          "id": 1,
-          "code":"CDAD",
-          "name":"Ciudad",
-          "county":{
-            "id": 1,
-            "code":"MZA",
-            "name":"Mendoza",
-            "country": {
-              "id":1,
-              "code":"AR",
-              "name":"Argentina"
-            }
-          }
-        }
-      },
-      "department": {
-        "id": 1,
-        "code":"CDAD",
-        "name":"Ciudad",
-        "county":{
-          "id": 1,
-          "code":"MZA",
-          "name":"Mendoza",
-          "country": {
-            "id":1,
-            "code":"AR",
-            "name":"Argentina"
-          }
-        }
-      },
-      "county":{
-        "id": 1,
-        "code":"MZA",
-        "name":"Mendoza",
-        "country": {
-          "id":1,
-          "code":"AR",
-          "name":"Argentina"
-        }
-      },
-      "country": {
-        "id":1,
-        "code":"AR",
-        "name":"Argentina"
-      }
+      "apartment": "N/A"
     },
     "insurance": {
       "id":1,
@@ -86,57 +36,7 @@
       "street": "Av. San Martin",
       "number": "972",
       "floor": "2",
-      "apartment": "N/A",
-      "town": {
-        "id": 1,
-        "code":"CAP",
-        "name":"Capital",
-        "department": {
-          "id": 1,
-          "code":"CDAD",
-          "name":"Ciudad",
-          "county":{
-            "id": 1,
-            "code":"MZA",
-            "name":"Mendoza",
-            "country": {
-              "id":1,
-              "code":"AR",
-              "name":"Argentina"
-            }
-          }
-        }
-      },
-      "department": {
-        "id": 1,
-        "code":"CDAD",
-        "name":"Ciudad",
-        "county":{
-          "id": 1,
-          "code":"MZA",
-          "name":"Mendoza",
-          "country": {
-            "id":1,
-            "code":"AR",
-            "name":"Argentina"
-          }
-        }
-      },
-      "county":{
-        "id": 1,
-        "code":"MZA",
-        "name":"Mendoza",
-        "country": {
-          "id":1,
-          "code":"AR",
-          "name":"Argentina"
-        }
-      },
-      "country": {
-        "id":1,
-        "code":"AR",
-        "name":"Argentina"
-      }
+      "apartment": "N/A"
     },
     "insurance": {
         "id":1,

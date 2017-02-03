@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,12 +12,8 @@ import android.view.ViewGroup;
 
 import com.eselman.medisys.adapters.PatientsLandingAdapter;
 import com.eselman.medisys.entities.Address;
-import com.eselman.medisys.entities.County;
-import com.eselman.medisys.entities.Department;
 import com.eselman.medisys.entities.MedicalInsurance;
 import com.eselman.medisys.entities.Patient;
-import com.eselman.medisys.entities.Town;
-import com.eselman.medisys.entities.User;
 import com.eselman.medisys.helpers.Constants;
 import com.eselman.medisys.helpers.DividerItemDecoration;
 import com.eselman.medisys.helpers.RecyclerTouchListener;
@@ -108,6 +103,7 @@ public class PatientsLandingFragment extends Fragment {
     private Patient parsePatientJsonObject (JSONObject patientJsonObject) throws Exception {
         Patient patient = new Patient();
 
+        patient.setId(patientJsonObject.getLong("id"));
         patient.setFirstName(patientJsonObject.getString("firstName"));
         patient.setLastName(patientJsonObject.getString("lastName"));
         patient.setPhoneNumber(patientJsonObject.getString("phoneNumber"));
@@ -127,30 +123,11 @@ public class PatientsLandingFragment extends Fragment {
         patientAddress.setNumber(patientAddressJsonObj.getString("number"));
         patientAddress.setFloor(patientAddressJsonObj.getString("floor"));
         patientAddress.setApartment(patientAddressJsonObj.getString("apartment"));
-
-        JSONObject townJsonObject = patientAddressJsonObj.getJSONObject("town");
-        Town patientTown = new Town();
-        patientTown.setCode(townJsonObject.getString("code"));
-        patientTown.setName(townJsonObject.getString("name"));
-        patientAddress.setTown(patientTown);
-
-        JSONObject departmentJsonObject = patientAddressJsonObj.getJSONObject("department");
-        Department patientDepartment = new Department();
-        patientDepartment.setCode(departmentJsonObject.getString("code"));
-        patientDepartment.setName(departmentJsonObject.getString("name"));
-        patientAddress.setDepartment(patientDepartment);
-
-        JSONObject countyJsonObject = patientAddressJsonObj.getJSONObject("county");
-        County patientCounty = new County();
-        patientCounty.setCode(countyJsonObject.getString("code"));
-        patientCounty.setName(countyJsonObject.getString("name"));
-        patientAddress.setCounty(patientCounty);
         patient.setAddress(patientAddress);
 
         // Parse Insurance
         JSONObject patientInsuranceJsonObj = patientJsonObject.getJSONObject("insurance");
         MedicalInsurance patientInsurance = new MedicalInsurance();
-        patientInsurance.setSymbol(patientInsuranceJsonObj.getString("symbol"));
         patientInsurance.setDescription(patientInsuranceJsonObj.getString("description"));
         patientInsurance.setAffiliateNumber(patientInsuranceJsonObj.getString("affiliateNumber"));
         patient.setInsurance(patientInsurance);

@@ -1,12 +1,15 @@
 package com.eselman.medisys.entities;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Created by eselman on 2/2/17.
  */
 public class PatientHistory implements Serializable {
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
     private Long id;
     private Patient patient;
     private Date visitDate;
@@ -21,10 +24,6 @@ public class PatientHistory implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Patient getPatient() {
-        return patient;
     }
 
     public void setPatient(Patient patient) {
@@ -69,5 +68,36 @@ public class PatientHistory implements Serializable {
 
     public void setObservations(String observations) {
         this.observations = observations;
+    }
+
+    public String getCompleteHistoryRecord(){
+        StringBuilder patientHistoryBuilder = new StringBuilder("");
+
+        if (this.getVisitDate() != null) {
+            String visitDateStr = simpleDateFormat.format(this.getVisitDate());
+            patientHistoryBuilder.append(visitDateStr);
+        }
+
+        if(this.getPatientWeight() != null){
+            patientHistoryBuilder.append("|");
+            patientHistoryBuilder.append(this.getPatientWeight().toString());
+        }
+
+        if(!this.getSymptoms().isEmpty()){
+            patientHistoryBuilder.append("|");
+            patientHistoryBuilder.append(this.getSymptoms());
+        }
+
+        if(!this.getDiagnosis().isEmpty()){
+            patientHistoryBuilder.append("|");
+            patientHistoryBuilder.append(this.getDiagnosis());
+        }
+
+        if(!this.getObservations().isEmpty()){
+            patientHistoryBuilder.append("|");
+            patientHistoryBuilder.append(this.getObservations());
+        }
+
+        return patientHistoryBuilder.toString();
     }
 }

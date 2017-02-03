@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 public class MedicalInsurance implements Serializable{
     private Long id;
-    private String symbol;
     private String description;
     private String affiliateNumber;
 
@@ -18,14 +17,6 @@ public class MedicalInsurance implements Serializable{
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
     }
 
     public String getDescription() {

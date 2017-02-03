@@ -160,5 +160,605 @@
     "symptoms": "Dolor de Cabeza, Nauseas, Mareos",
     "diagnosis": "cefalea",
     "observations":"Estudios Normales"
+  },
+  {
+    "id": 3,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 4,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 5,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 6,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 7,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 8,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 9,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
+  },
+  {
+    "id": 10,
+    "patient": {
+      "id": 2,
+      "firstName": "Lucia",
+      "lastName": "Gonzalez",
+      "age": 28,
+      "phoneNumber": "4454522",
+      "mobilePhone": "261718922",
+      "identificationNumber": "35981110",
+      "birthDate": "1989-02-25",
+      "address": {
+        "id": 1,
+        "street": "Av. San Martin",
+        "number": "972",
+        "floor": "2",
+        "apartment": "N/A",
+        "town": {
+          "id": 1,
+          "code": "CAP",
+          "name": "Capital",
+          "department": {
+            "id": 1,
+            "code": "CDAD",
+            "name": "Ciudad",
+            "county": {
+              "id": 1,
+              "code": "MZA",
+              "name": "Mendoza",
+              "country": {
+                "id": 1,
+                "code": "AR",
+                "name": "Argentina"
+              }
+            }
+          }
+        },
+        "department": {
+          "id": 1,
+          "code": "CDAD",
+          "name": "Ciudad",
+          "county": {
+            "id": 1,
+            "code": "MZA",
+            "name": "Mendoza",
+            "country": {
+              "id": 1,
+              "code": "AR",
+              "name": "Argentina"
+            }
+          }
+        },
+        "county": {
+          "id": 1,
+          "code": "MZA",
+          "name": "Mendoza",
+          "country": {
+            "id": 1,
+            "code": "AR",
+            "name": "Argentina"
+          }
+        },
+        "country": {
+          "id": 1,
+          "code": "AR",
+          "name": "Argentina"
+        }
+      }
+    },
+    "visitDate": "2017-02-01",
+    "patientWeight": 50.0,
+    "symptoms": "Dolor de Estomago, Vomitos",
+    "diagnosis": "Gastroenteritis",
+    "observations": "Recomiendo dieta liquida y antibioticos"
   }
 ]

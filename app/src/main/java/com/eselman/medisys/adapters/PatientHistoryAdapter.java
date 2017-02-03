@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eselman.medisys.R;
-import com.eselman.medisys.entities.Patient;
+import com.eselman.medisys.entities.PatientHistory;
 
 import java.util.List;
 
@@ -15,40 +15,35 @@ import java.util.List;
  * Created by Evangelina Selman on 02/02/2017.
  */
 public class PatientHistoryAdapter extends RecyclerView.Adapter<PatientHistoryAdapter.ViewHolder> {
-    private List<Patient> patients;
+    private List<PatientHistory> patientHistoryRecords;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView patientNameTextView;
-        TextView patientIdNumberTextView;
+        TextView patientHistoryTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            patientNameTextView = (TextView) itemView.findViewById(R.id.patientName);
-            patientIdNumberTextView = (TextView) itemView.findViewById(R.id.patientIdNumber);
+            patientHistoryTextView = (TextView) itemView.findViewById(R.id.patientHistoryRecord);
         }
     }
 
-    public PatientHistoryAdapter(List<Patient> patients) {
-        this.patients = patients;
+    public PatientHistoryAdapter(List<PatientHistory> patientHistoryRecords) {
+        this.patientHistoryRecords = patientHistoryRecords;
     }
 
     @Override
     public PatientHistoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.patiens_list_item, parent, false);
-        ViewHolder vhItem = new ViewHolder(v);
-        return vhItem;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.patient_history_item, parent, false);
+        return new ViewHolder(view);
       }
 
     @Override
     public void onBindViewHolder(PatientHistoryAdapter.ViewHolder holder, int position) {
-        Patient patient = patients.get(position);
-        String patientName = patient.getLastName() + ", " + patient.getFirstName();
-        holder.patientNameTextView.setText(patientName);
-        holder.patientIdNumberTextView.setText(patient.getIdentificationNumber());
+        PatientHistory patientHistoryRecord = patientHistoryRecords.get(position);
+        holder.patientHistoryTextView.setText(patientHistoryRecord.getCompleteHistoryRecord());
     }
 
     @Override
     public int getItemCount() {
-        return patients.size();
+        return patientHistoryRecords.size();
     }
 }

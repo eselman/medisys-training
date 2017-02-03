@@ -2,27 +2,20 @@ package com.eselman.medisys;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.helpers.Constants;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 
 public class PatientDetailActivity extends AppCompatActivity {
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-    private Toolbar toolbar;
 
     private TextView patientIdNumberInput;
     private TextView patientAgeInput;
@@ -42,7 +35,7 @@ public class PatientDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patient_detail);
 
         // Assinging the toolbar object to the view and setting the Action bar to the toolbar
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
         patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);

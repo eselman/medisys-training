@@ -11,42 +11,6 @@ public class Address implements Serializable{
     private String number;
     private String floor;
     private String apartment;
-    private Town town;
-    private Department department;
-    private County county;
-    private Country country;
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public County getCounty() {
-        return county;
-    }
-
-    public void setCounty(County county) {
-        this.county = county;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public Town getTown() {
-        return town;
-    }
-
-    public void setTown(Town town) {
-        this.town = town;
-    }
 
     public String getApartment() {
         return apartment;

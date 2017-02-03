@@ -192,7 +192,6 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/edit"
-            app:layout_anchor="@+id/contenedor_detalle_item"
             app:layout_anchorGravity="top|end"
             app:backgroundTint="@color/colorPrimary"/>
     </LinearLayout>

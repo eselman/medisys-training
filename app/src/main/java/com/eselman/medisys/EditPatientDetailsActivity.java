@@ -2,22 +2,16 @@ package com.eselman.medisys;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.eselman.medisys.entities.Address;
 import com.eselman.medisys.entities.Patient;
 import com.eselman.medisys.helpers.Constants;
 
@@ -28,7 +22,6 @@ import java.util.Date;
 public class EditPatientDetailsActivity extends AppCompatActivity {
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    private Toolbar toolbar;
     private Patient patient;
     private EditText patientFirstNameInput;
     private EditText patientLastNameInput;
@@ -51,7 +44,7 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_patient_details);
 
         // Assinging the toolbar object to the view and setting the Action bar to the toolbar
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         patient = (Patient) getIntent().getBundleExtra(Constants.PATIENT_EXTRA).getSerializable(Constants.PATIENT_BUNDLE);
         String patientName = patient.getLastName() + ", " + patient.getFirstName();

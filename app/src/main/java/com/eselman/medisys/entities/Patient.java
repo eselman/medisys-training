@@ -2,8 +2,6 @@ package com.eselman.medisys.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Evangelina Selman on 29/01/2017.

@@ -19,7 +19,7 @@
         <activity
             android:name=".PatientDetailActivity"
             android:parentActivityName=".PatientsLandingActivity" />
-        <activity android:name=".PatientHistoryActivity" />
+        <activity android:name=".PatientHistoryActivity" android:parentActivityName=".PatientDetailActivity"/>
         <activity android:name=".EditPatientDetailsActivity"
             android:parentActivityName=".PatientDetailActivity"/>
     </application>
