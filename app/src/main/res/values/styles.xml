@@ -11,6 +11,7 @@
     <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorTextWhite</item>
+        <item name="android:layout_marginTop">16dp</item>
     </style>
 
     <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">

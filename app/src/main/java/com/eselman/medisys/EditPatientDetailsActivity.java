@@ -124,18 +124,29 @@ public class EditPatientDetailsActivity extends AppCompatActivity {
 
     private void loadPatientInfo(){
         patientFirstNameInput.setText(patient.getFirstName());
+        patientFirstNameInput.setSelection(patientFirstNameInput.getText().length());
         patientLastNameInput.setText(patient.getLastName());
+        patientLastNameInput.setSelection(patientLastNameInput.getText().length());
         patientIdNumberInput.setText(patient.getIdentificationNumber());
+        patientIdNumberInput.setSelection(patientIdNumberInput.getText().length());
         String birthDateStr = simpleDateFormat.format(patient.getBirthDate());
         patientBirthDateInput.setText(birthDateStr);
         patientStreetInput.setText(patient.getAddress().getStreet());
+        patientStreetInput.setSelection(patientStreetInput.getText().length());
         patientStreetNumberInput.setText(patient.getAddress().getNumber());
+        patientStreetNumberInput.setSelection(patientStreetNumberInput.getText().length());
         patientFloorInput.setText(patient.getAddress().getFloor());
+        patientFloorInput.setSelection(patientFloorInput.getText().length());
         patientApartmentInput.setText(patient.getAddress().getApartment());
+        patientApartmentInput.setSelection(patientApartmentInput.getText().length());
         patientPhoneNumberInput.setText(patient.getPhoneNumber());
+        patientPhoneNumberInput.setSelection(patientPhoneNumberInput.getText().length());
         patientMobilePhoneInput.setText(patient.getMobilePhone());
+        patientMobilePhoneInput.setSelection(patientMobilePhoneInput.getText().length());
         patientInsuranceInput.setText(patient.getInsurance().getDescription());
+        patientInsuranceInput.setSelection(patientInsuranceInput.getText().length());
         patientInsuranceNumberInput.setText(patient.getInsurance().getAffiliateNumber());
+        patientInsuranceNumberInput.setSelection(patientInsuranceNumberInput.getText().length());
     }
 
     private void updatePatientInfo() throws Exception{

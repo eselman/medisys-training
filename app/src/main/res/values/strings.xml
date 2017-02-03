@@ -21,4 +21,5 @@
     <string name="street_number_label">Nro</string>
     <string name="floor_label">Piso</string>
     <string name="apartment_label">Dpto</string>
+    <string name="new_patient_label">Nuevo Paciente</string>
 </resources>

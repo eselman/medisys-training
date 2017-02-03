@@ -11,4 +11,5 @@
     <dimen name="label_separator_padding">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="image_button_elevation">16dp</dimen>
+    <dimen name="text_input_font_size">15sp</dimen>
 </resources>

@@ -19,9 +19,16 @@
         <activity
             android:name=".PatientDetailActivity"
             android:parentActivityName=".PatientsLandingActivity" />
-        <activity android:name=".PatientHistoryActivity" android:parentActivityName=".PatientDetailActivity"/>
-        <activity android:name=".EditPatientDetailsActivity"
-            android:parentActivityName=".PatientDetailActivity"/>
+        <activity
+            android:name=".PatientHistoryActivity"
+            android:parentActivityName=".PatientDetailActivity" />
+        <activity
+            android:name=".EditPatientDetailsActivity"
+            android:parentActivityName=".PatientDetailActivity" />
+        <activity
+            android:name=".AddPatientHistoryActivity"
+            android:parentActivityName=".PatientHistoryActivity" />
+        <activity android:name=".AddPatientActivity" android:parentActivityName=".PatientsLandingActivity"/>
     </application>
 
 </manifest>

@@ -1,12 +1,14 @@
 package com.eselman.medisys;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.eselman.medisys.adapters.PatientHistoryAdapter;
 import com.eselman.medisys.entities.Patient;
@@ -31,6 +33,7 @@ public class PatientHistoryActivity extends AppCompatActivity {
     private RecyclerView patientHistoryRecyclerView;
     private RecyclerView.Adapter patientHistoryAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private FloatingActionButton addPatientHistoryFloatingBtn;
 
     private Patient patient;
     private List<PatientHistory> patientHistoryRecords;
@@ -57,6 +60,18 @@ public class PatientHistoryActivity extends AppCompatActivity {
         patientHistoryRecyclerView.setLayoutManager(layoutManager);
         patientHistoryAdapter = new PatientHistoryAdapter(patientHistoryRecords);
         patientHistoryRecyclerView.setAdapter(patientHistoryAdapter);
+
+        addPatientHistoryFloatingBtn = (FloatingActionButton) findViewById(R.id.addPatientHistoryFloatingBtn);
+        addPatientHistoryFloatingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addPatientHistoryIntent = new Intent(PatientHistoryActivity.this, AddPatientHistoryActivity.class);
+                Bundle patientBundle = new Bundle();
+                patientBundle.putSerializable(Constants.PATIENT_BUNDLE, patient);
+                addPatientHistoryIntent.putExtra(Constants.PATIENT_EXTRA, patientBundle);
+                startActivity(addPatientHistoryIntent);
+            }
+        });
     }
 
     @Override

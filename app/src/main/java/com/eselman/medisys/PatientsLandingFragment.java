@@ -3,6 +3,7 @@ package com.eselman.medisys;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,6 +35,7 @@ public class PatientsLandingFragment extends Fragment {
     private RecyclerView.Adapter patientsLandingAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Patient> patients;
+    private FloatingActionButton addPatientFloatingBtn;
 
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -69,6 +71,15 @@ public class PatientsLandingFragment extends Fragment {
 
             }
         }));
+
+        addPatientFloatingBtn = (FloatingActionButton) rootView.findViewById(R.id.addPatientFloatingBtn);
+        addPatientFloatingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent addPatientIntent = new Intent(getActivity(), AddPatientActivity.class);
+                startActivity(addPatientIntent);
+            }
+        });
 
         return rootView;
     }
